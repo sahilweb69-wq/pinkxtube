@@ -2,20 +2,6 @@
                 class="bg-sidebar text-sidebar-foreground border-r border-gray-200 dark:border-gray-700 sidebar-transition overflow-hidden">
                 <!-- Sidebar Content -->
                 <div class="h-full flex flex-col">
-                    <!-- Sidebar Header -->
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-500" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <span class="ml-2 font-semibold text-lg transition-opacity duration-300"
-                                :class="{ 'opacity-0': !sidebarOpen }">{{ config('app.name') }}</span>
-                        </div>
-                    </div>
-
                     <!-- Sidebar Menu -->
                     <nav class="flex-1 overflow-y-auto custom-scrollbar py-4">
                         <ul class="space-y-1 px-2">
@@ -192,21 +178,5 @@
                             </li> --}}
                         </ul>
                     </nav>
-
-                    <!-- Sidebar Footer -->
-                    <div class="p-4 border-t border-gray-200 dark:border-gray-700">
-                        <div class="flex items-center" x-show="sidebarOpen">
-                            <span class="relative flex h-8 w-8 shrink-0 overflow-hidden rounded-lg">
-                                <span
-                                    class="flex h-full w-full items-center justify-center rounded-lg bg-gray-200 text-black dark:bg-gray-700 dark:text-white">
-                                    {{ Auth::user()->initials() }}
-                                </span>
-                            </span>
-                            <div class="ml-3">
-                                <p class="text-sm font-medium">{{ Auth::user()->name }}</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">User</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </aside>
