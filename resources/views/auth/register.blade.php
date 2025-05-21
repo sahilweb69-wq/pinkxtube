@@ -13,53 +13,27 @@
                 @csrf
                 <!-- Full Name Input -->
                 <div class="mb-4">
-                    <label for="name"
-                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Full Name') }}</label>
-                    <input type="text" id="name" placeholder="{{ __('Full Name') }}" name="name"
-                        class="w-full px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    @error('name')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
+                    <x-forms.input label="Full Name" name="name" type="text" placeholder="{{ __('Full Name') }}" />
                 </div>
 
                 <!-- Email Input -->
                 <div class="mb-4">
-                    <label for="email"
-                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Email') }}</label>
-                    <input type="email" id="email" placeholder="your@email.com" name="email"
-                        class="w-full px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    @error('email')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
+                    <x-forms.input label="Email" name="email" type="email" placeholder="your@email.com" />
                 </div>
 
                 <!-- Password Input -->
                 <div class="mb-4">
-                    <label for="password"
-                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Password') }}</label>
-                    <input type="password" id="password" placeholder="••••••••" name="password"
-                        class="w-full px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    @error('password')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
+                    <x-forms.input label="Password" name="password" type="password" placeholder="••••••••" />
                 </div>
 
                 <!-- Confirm Password Input -->
                 <div class="mb-4">
-                    <label for="confirm-password"
-                        class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Confirm Password') }}</label>
-                    <input type="password" id="confirm-password" placeholder="••••••••" name="password_confirmation"
-                        class="w-full px-4 py-2 rounded-lg text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                    @error('confirm-password')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
+                    <x-forms.input label="Confirm Password" name="password_confirmation" type="password"
+                        placeholder="••••••••" />
                 </div>
 
                 <!-- Register Button -->
-                <button type="submit"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors">
-                    {{ __('Create Account') }}
-                </button>
+                <x-buttons.primary class="w-full">{{ __('Create Account') }}</x-buttons.primary>
             </form>
 
             <!-- Login Link -->

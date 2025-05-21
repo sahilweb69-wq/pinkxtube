@@ -39,40 +39,19 @@
                             @csrf
                             @method('PUT')
                             <div class="mb-4">
-                                <label for="current_password"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Current Password') }}</label>
-                                <input type="password" id="current_password" name="current_password"
-                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                                @error('current_password')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+                                <x-forms.input label="Current Password" name="current_password" type="password" />
                             </div>
 
                             <div class="mb-6">
-                                <label for="password"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('New Password') }}</label>
-                                <input type="password" id="password" name="password" value="{{ old('password') }}"
-                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                                @error('password')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+                                <x-forms.input label="New Password" name="password" type="password" />
                             </div>
 
                             <div class="mb-6">
-                                <label for="password_confirmation"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Confirm Password') }}</label>
-                                <input type="password" id="password_confirmation" name="password_confirmation"
-                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                                @error('password_confirmation')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+                                <x-forms.input label="Confirm Password" name="password_confirmation" type="password" />
                             </div>
 
                             <div>
-                                <button type="submit"
-                                    class="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors dark:bg-gray-900 dark:hover:bg-gray-700">
-                                    {{ __('Update Password') }}
-                                </button>
+                                <x-buttons.primary>{{ __('Update Password') }}</x-buttons.primary>
                             </div>
                         </form>
                     </div>

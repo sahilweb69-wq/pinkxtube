@@ -37,32 +37,17 @@
                             @csrf
                             @method('PUT')
                             <div class="mb-4">
-                                <label for="name"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Name') }}</label>
-                                <input type="text" id="name" name="name"
-                                    value="{{ old('name', $user->name) }}"
-                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                                @error('name')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+                                <x-forms.input label="Name" name="name" type="text"
+                                    value="{{ old('name', $user->name) }}" />
                             </div>
 
                             <div class="mb-6">
-                                <label for="email"
-                                    class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ __('Email') }}</label>
-                                <input type="email" id="email" name="email"
-                                    value="{{ old('email', $user->email) }}"
-                                    class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
-                                @error('email')
-                                    <span class="text-red-500">{{ $message }}</span>
-                                @enderror
+                                <x-forms.input label="Email" name="email" type="email"
+                                    value="{{ old('email', $user->email) }}" />
                             </div>
 
                             <div>
-                                <button type="submit"
-                                    class="px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors dark:bg-gray-900 dark:hover:bg-gray-700">
-                                    {{ __('Save') }}
-                                </button>
+                                <x-buttons.primary>{{ __('Save') }}</x-buttons.primary>
                             </div>
                         </form>
 
@@ -78,10 +63,7 @@
                                 onsubmit="return confirm('{{ __('Are you sure you want to delete your account?') }}')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit"
-                                    class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors">
-                                    {{ __('Delete account') }}
-                                </button>
+                                <x-buttons.danger>{{ __('Delete account') }}</x-buttons.danger>
                             </form>
                         </div>
                     </div>
