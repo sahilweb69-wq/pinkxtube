@@ -4,14 +4,14 @@
 
 ## Introduction
 
-Our Laravel + Blade starter kit provides the typical functionality found in the Laravel Starter kits, but with a few key differences:
+Our Laravel 12 + Blade starter kit provides the typical functionality found in the Laravel Starter kits, but with a few key differences:
 
 - A CoreUI/AdminLTE inspired design layout
 - Blade + AlpineJS code
 
-This kit aims to fill the gap where there is no simple **blade only** starter kit available.
+This kit aims to fill the gap where there is no simple **Blade only** starter kit available.
 
-We are also using this starter kit for our Demo applications, to simplify the proccess and provide native Blade explanations.
+Our internal goal at Laravel Daily is to start using this starter kit for our Demo applications, to avoid overwhelming our audience with Vue/Livewire/React if we had used one of the official Laravel 12 starter kits.
 
 **Note:** This is Work in Progress kit, so it will get updates and fixes/features as we go.
 
@@ -58,7 +58,7 @@ From there, you can modify the kit to your needs.
 
 ---
 
-## Design
+## Design Elements
 
 If you want to see examples of what design elements we have, you can [visit the Wiki](<https://github.com/LaravelDaily/starter-kit/wiki/Design-Examples-(Raw-Files)>) and see the raw HTML files.
 
