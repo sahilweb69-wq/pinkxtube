@@ -51,11 +51,12 @@
                             </div>
 
                             <div>
-                                <x-buttons.primary>{{ __('Update Password') }}</x-buttons.primary>
+                                <x-button type="primary">{{ __('Update Password') }}</x-button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </x-layouts.app>

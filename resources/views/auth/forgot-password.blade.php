@@ -23,9 +23,9 @@
                 </div>
 
                 <!-- Send Reset Link Button -->
-                <x-buttons.primary type="submit" class="w-full">
+                <x-button type="primary" buttonType="submit" class="w-full">
                     {{ __('Send Password Reset Link') }}
-                </x-buttons.primary>
+                </x-button>
             </form>
 
             <!-- Back to Login Link -->

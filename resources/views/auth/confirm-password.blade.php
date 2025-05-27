@@ -18,9 +18,9 @@
                 </div>
 
                 <!-- Confirm Button -->
-                <x-buttons.primary type="submit" class="w-full">
+                <x-button type="primary" buttonType="submit" class="w-full">
                     {{ __('Confirm Password') }}
-                </x-buttons.primary>
+                </x-button>
             </form>
 
             <!-- Forgot Password Link -->

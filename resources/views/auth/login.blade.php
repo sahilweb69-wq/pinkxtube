@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- Login Button -->
-                <x-buttons.primary class="w-full">{{ __('Sign In') }}</x-buttons.primary>
+                <x-button type="primary" class="w-full">{{ __('Sign In') }}</x-button>
             </form>
 
             <!-- Register Link -->
