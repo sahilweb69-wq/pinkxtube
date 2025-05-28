@@ -33,7 +33,7 @@
                 </div>
 
                 <!-- Register Button -->
-                <x-buttons.primary class="w-full">{{ __('Create Account') }}</x-buttons.primary>
+                <x-button type="primary" class="w-full">{{ __('Create Account') }}</x-button>
             </form>
 
             <!-- Login Link -->
