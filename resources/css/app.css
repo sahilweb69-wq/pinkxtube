@@ -10,7 +10,7 @@
         "Instrument Sans", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
-    --sidebar-background: hsl(var(--sidebar-wbackground));
+    --sidebar-background: hsl(var(--sidebar-background));
     --sidebar-foreground: hsl(var(--sidebar-foreground));
     --sidebar-accent: hsl(var(--sidebar-accent));
     --sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
@@ -21,6 +21,10 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer components {
+    .bg-sidebar {
+        background-color: hsl(var(--sidebar-background));
+    }
+    
     .bg-sidebar-accent {
         background-color: hsl(var(--sidebar-accent));
     }
