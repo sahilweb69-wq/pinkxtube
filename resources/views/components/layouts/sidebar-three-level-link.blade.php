@@ -5,5 +5,5 @@
     'bg-sidebar-accent text-sidebar-accent-foreground font-medium' => $active,
     'hover:bg-sidebar-accent hover:text-sidebar-accent-foreground text-sidebar-foreground' => !$active,
 ])>
-    <span x-data="{}" :class="{ 'opacity-0 hidden': !sidebarOpen && !$parent.$parent.$parent.showPopup }">{{ $slot }}</span>
+    <span x-data="{}" :class="{ 'opacity-0 hidden': !sidebarOpen }">{{ $slot }}</span>
 </a>
