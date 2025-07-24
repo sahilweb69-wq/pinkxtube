@@ -3,30 +3,29 @@
     <div
         class="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden">
         <div class="p-6">
-            <div class="text-center mb-6">
-                <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{{ __('Login') }}</h1>
-                <p class="text-gray-600 dark:text-gray-400 mt-1">Sign in to your account</p>
+            <div class="mb-3">
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{{ __('Log in to your account') }}</h1>
             </div>
 
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login') }}" class="space-y-3">
                 @csrf
                 <!-- Email Input -->
-                <div class="mb-4">
+                <div>
                     <x-forms.input label="Email" name="email" type="email" placeholder="your@email.com" />
                 </div>
 
                 <!-- Password Input -->
-                <div class="mb-4">
+                <div>
                     <x-forms.input label="Password" name="password" type="password" placeholder="••••••••" />
-                    @if (Route::has('password.request'))
-                        <a href="{{ route('password.request') }}"
-                            class="text-xs text-blue-600 dark:text-blue-400 hover:underline">{{ __('Forgot password?') }}</a>
-                    @endif
-                </div>
 
-                <!-- Remember Me -->
-                <div class="mb-6">
-                    <x-forms.checkbox label="Remember me" name="remember" />
+                    <!-- Remember me & password reset -->
+                    <div class="flex items-center justify-between mt-2">
+                        @if (Route::has('password.request'))
+                            <a href="{{ route('password.request') }}"
+                                class="text-xs text-blue-600 dark:text-blue-400 hover:underline">{{ __('Forgot password?') }}</a>
+                        @endif
+                        <x-forms.checkbox label="Remember me" name="remember" />
+                    </div>
                 </div>
 
                 <!-- Login Button -->
