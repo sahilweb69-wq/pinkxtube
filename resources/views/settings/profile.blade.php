@@ -1,13 +1,13 @@
 <x-layouts.app>
     <!-- Breadcrumbs -->
     <div class="mb-6 flex items-center text-sm">
-        <a href="{{ route('dashboard') }}"
+        <a href="{{ route('admin.dashboard') }}"
             class="text-blue-600 dark:text-blue-400 hover:underline">{{ __('Dashboard') }}</a>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-400" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
         </svg>
-        <a href="{{ route('settings.profile.edit') }}"
+        <a href="{{ route('admin.settings.profile.edit') }}"
             class="text-blue-600 dark:text-blue-400 hover:underline">{{ __('Profile') }}</a>
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mx-2 text-gray-400" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -33,7 +33,7 @@
                     class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden mb-6">
                     <div class="p-6">
                         <!-- Profile Form -->
-                        <form class="max-w-md mb-10" action="{{ route('settings.profile.update') }}" method="POST">
+                        <form class="max-w-md mb-10" action="{{ route('admin.settings.profile.update') }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="mb-4">
@@ -59,7 +59,7 @@
                             <p class="text-gray-600 dark:text-gray-400 mb-4">
                                 {{ __('Delete your account and all of its resources') }}
                             </p>
-                            <form action="{{ route('settings.profile.destroy') }}" method="POST"
+                            <form action="{{ route('admin.settings.profile.destroy') }}" method="POST"
                                 onsubmit="return confirm('{{ __('Are you sure you want to delete your account?') }}')">
                                 @csrf
                                 @method('DELETE')

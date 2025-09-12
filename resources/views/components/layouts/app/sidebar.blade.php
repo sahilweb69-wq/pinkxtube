@@ -6,8 +6,8 @@
                     <nav class="flex-1 overflow-y-auto custom-scrollbar py-4">
                         <ul class="space-y-1 px-2">
                             <!-- Dashboard -->
-                            <x-layouts.sidebar-link href="{{ route('dashboard') }}" icon='fas-house'
-                                :active="request()->routeIs('dashboard*')">Dashboard</x-layouts.sidebar-link>
+                            <x-layouts.sidebar-link href="{{ route('admin.dashboard') }}" icon='fas-house'
+                                :active="request()->routeIs('admin.dashboard')">Dashboard</x-layouts.sidebar-link>
 
                             <!-- Example two level -->
                             <x-layouts.sidebar-two-level-link-parent title="Example two level" icon="fas-house"
@@ -29,6 +29,16 @@
                                     </x-layouts.sidebar-three-level-link>
                                 </x-layouts.sidebar-three-level-parent>
                             </x-layouts.sidebar-two-level-link-parent>
+
+                            @if(auth()->check() && auth()->user()->hasPermission('admin.access'))
+                            <div class="mt-4">
+                                <div class="px-2 text-xs uppercase text-gray-500">Administration</div>
+                                <x-layouts.sidebar-link href="{{ route('admin.roles.index') }}" icon='fas-user-shield'
+                                    :active="request()->routeIs('admin.roles.*')">Roles</x-layouts.sidebar-link>
+                                <x-layouts.sidebar-link href="{{ route('admin.permissions.index') }}" icon='fas-key'
+                                    :active="request()->routeIs('admin.permissions.*')">Permissions</x-layouts.sidebar-link>
+                            </div>
+                            @endif
                         </ul>
                     </nav>
                 </div>
