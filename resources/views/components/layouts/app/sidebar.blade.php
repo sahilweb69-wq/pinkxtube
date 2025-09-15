@@ -9,12 +9,25 @@
                             <x-layouts.sidebar-link href="{{ route('admin.dashboard') }}" icon='fas-house'
                                 :active="request()->routeIs('admin.dashboard')">Dashboard</x-layouts.sidebar-link>
 
-                            <!-- Example two level -->
-                            <x-layouts.sidebar-two-level-link-parent title="Example two level" icon="fas-house"
-                                :active="request()->routeIs('two-level*')">
-                                <x-layouts.sidebar-two-level-link href="#" icon='fas-house'
-                                    :active="request()->routeIs('two-level*')">Child</x-layouts.sidebar-two-level-link>
-                            </x-layouts.sidebar-two-level-link-parent>
+                            @if (auth()->check() &&
+                                    (auth()->user()->hasPermission('roles.manage') || auth()->user()->hasPermission('permissions.manage')))
+                                <div class="mt-4">
+                                    <x-layouts.sidebar-two-level-link-parent title="Administration" icon="fas-user-tie"
+                                        :active="request()->routeIs('admin.roles.*') ||
+                                            request()->routeIs('admin.permissions.*')">
+                                        @if (auth()->user()->hasPermission('roles.manage'))
+                                            <x-layouts.sidebar-two-level-link href="{{ route('admin.roles.index') }}"
+                                                icon='fas-user-shield'
+                                                :active="request()->routeIs('admin.roles.*')">Roles</x-layouts.sidebar-two-level-link>
+                                        @endif
+                                        @if (auth()->user()->hasPermission('permissions.manage'))
+                                            <x-layouts.sidebar-two-level-link
+                                                href="{{ route('admin.permissions.index') }}" icon='fas-key'
+                                                :active="request()->routeIs('admin.permissions.*')">Permissions</x-layouts.sidebar-two-level-link>
+                                        @endif
+                                    </x-layouts.sidebar-two-level-link-parent>
+                                </div>
+                            @endif
 
                             <!-- Example three level -->
                             <x-layouts.sidebar-two-level-link-parent title="Example three level" icon="fas-house"
@@ -30,15 +43,7 @@
                                 </x-layouts.sidebar-three-level-parent>
                             </x-layouts.sidebar-two-level-link-parent>
 
-                            @if(auth()->check() && auth()->user()->hasPermission('admin.access'))
-                            <div class="mt-4">
-                                <div class="px-2 text-xs uppercase text-gray-500">Administration</div>
-                                <x-layouts.sidebar-link href="{{ route('admin.roles.index') }}" icon='fas-user-shield'
-                                    :active="request()->routeIs('admin.roles.*')">Roles</x-layouts.sidebar-link>
-                                <x-layouts.sidebar-link href="{{ route('admin.permissions.index') }}" icon='fas-key'
-                                    :active="request()->routeIs('admin.permissions.*')">Permissions</x-layouts.sidebar-link>
-                            </div>
-                            @endif
+
                         </ul>
                     </nav>
                 </div>
